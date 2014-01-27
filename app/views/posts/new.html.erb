@@ -17,7 +17,14 @@
       <%= f.label :time %>
       <%= f.select :time, options_for_select(['Day', 'Evening']) %>
 
-      *date picker placeholder
+      <%= f.label :pickupdate %>
+      <%= f.text_field :pickupdate, placeholder: "mm-dd-yyyy", 'data-behaviour' => 'datepicker' %>
+
+      <script type="text/javascript">
+        $(document).ready(function(){
+          $('[data-behaviour~=datepicker]').datepicker();
+        })
+      </script>
 
       <%= f.submit "Request!", class: "btn btn-large btn-primary" %>
     <% end %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140127010138) do
+ActiveRecord::Schema.define(version: 20140127015150) do
 
   create_table "posts", force: true do |t|
     t.string   "phone"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20140127010138) do
     t.string   "cartype"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "pickupdate"
   end
 
 end
