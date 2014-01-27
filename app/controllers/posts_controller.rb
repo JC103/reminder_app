@@ -33,7 +33,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-      params.require(:post).permit(:email, :phone, :date, :time, :cartype)
+      params.require(:post).permit(:email, :phone, :time, :cartype) #add in :date after it's been sorted out. add in validations too.
   end
 
 end

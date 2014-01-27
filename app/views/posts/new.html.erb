@@ -14,6 +14,9 @@
       <%= f.label :cartype %>
       <%= f.select :cartype, options_for_select(['Limo', 'SUV Limo', 'Luxury Sedan', 'Limo Van']) %>
 
+      <%= f.label :time %>
+      <%= f.select :time, options_for_select(['Day', 'Evening']) %>
+
       *date picker placeholder
 
       <%= f.submit "Request!", class: "btn btn-large btn-primary" %>
