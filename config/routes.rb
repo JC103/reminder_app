@@ -1,9 +1,10 @@
 Strauus::Application.routes.draw do
-  get "static_pages/home"
-  get "static_pages/help"
-  get "static_pages/terms"
-  get "static_pages/overview"
-  get "static_pages/about"
+  root  'static_pages#home'
+  match '/help',    to: 'static_pages#help',    via: 'get'
+  match '/about',   to: 'static_pages#about',   via: 'get'
+  match '/terms', to: 'static_pages#terms', via: 'get'
+  match '/overview', to: 'static_pages#overview', via: 'get'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
