@@ -1,5 +1,9 @@
 Strauus::Application.routes.draw do
+  get "posts/new"
+  get "users/new"
+  
   root  'static_pages#home'
+  match '/request',  to: 'posts#new',            via: 'get'
   match '/help',    to: 'static_pages#help',    via: 'get'
   match '/about',   to: 'static_pages#about',   via: 'get'
   match '/terms', to: 'static_pages#terms', via: 'get'
