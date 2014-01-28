@@ -1,6 +1,10 @@
 Strauus::Application.routes.draw do
-  get "users/new"
+  resources :users
+  resources :sessions, only: [:new, :create, :destroy]
   resources :posts
+  match '/signup',  to: 'users#new',            via: 'get'
+  match '/signin',  to: 'sessions#new',         via: 'get'
+  match '/signout', to: 'sessions#destroy',     via: 'delete'
   root  'static_pages#home'
   match '/request',  to: 'posts#new',            via: 'get'
   match '/help',    to: 'static_pages#help',    via: 'get'
