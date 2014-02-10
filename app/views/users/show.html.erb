@@ -1,2 +1,10 @@
-<%= @user.name %>
-<%= @user.email %>
+<% @posts.reverse.each do |x| %>
+<div style="border-width: 2px; border-style: solid; margin: 10px; padding: 5px;" class="col-md-6">
+<% if signed_in? %>
+<h3><div><%= x.phone %></div></h3>
+<h4><div><%= x.email %></div></h4>
+<p><div>Posted <%=time_ago_in_words(x.created_at)%> ago</div></p>
+<small><div><%= link_to "delete post", x, method: :delete, data: { confirm: "DELETE POST?" } %></div></small>
+<% end %>
+</div>
+<% end %>

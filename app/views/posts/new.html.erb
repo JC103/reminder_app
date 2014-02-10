@@ -1,33 +1,18 @@
-<% provide(:title, 'Sign up') %>
-<h1>Sign up</h1>
+<% provide(:title, 'New Reminder') %>
+<h1>Add a reminder</h1>
 
 <div class="row">
   <div class="span6 offset3">
     <%= form_for(@post) do |f| %>
     <%= render 'shared/error_messages' %>
 
-      <%= f.label :phone %>
+      <%= f.label "What happened?" %>
       <%= f.text_field :phone %>
 
-      <%= f.label :email %>
-      <%= f.text_field :email %>
+      <%= f.label "Details:" %>
+      <%= f.text_area :email, :rows => "3" %>
 
-      <%= f.label :cartype %>
-      <%= f.select :cartype, options_for_select(['Limo', 'SUV Limo', 'Luxury Sedan', 'Limo Van']) %>
-
-      <%= f.label :time %>
-      <%= f.select :time, options_for_select(['Day', 'Evening']) %>
-
-      <%= f.label :pickupdate %>
-      <%= f.text_field :pickupdate, placeholder: "mm-dd-yyyy", 'data-behaviour' => 'datepicker' %>
-
-      <script type="text/javascript">
-        $(document).ready(function(){
-          $('[data-behaviour~=datepicker]').datepicker();
-        })
-      </script>
-
-      <%= f.submit "Request!", class: "btn btn-large btn-primary" %>
+      <%= f.submit "Submit!!", class: "btn btn-large btn-primary" %>
     <% end %>
   </div>
 </div>

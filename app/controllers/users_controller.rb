@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   before_action :admin_user,     only: :destroy
 
   def show
+    @posts = Post.all
     @user = User.find(params[:id])
   end
 
